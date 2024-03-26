@@ -53,7 +53,7 @@
     <li><a href="#roadmap">Roadmap</a></li>
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
-    <li><a href="#contact">Contact</a></li>
+    <li><a href="#Contributors">Contributors</a></li>
     <li><a href="#acknowledgments">Acknowledgments</a></li>
   </ol>
 </details>
@@ -68,7 +68,12 @@
 
 ### Built With
 
-- [![Next][Next.js]][Next-url]
+[![Next][Next.js]][Next-url]
+[![React][React.js]][React-url]
+[![Node.js][Node.js]][Node-url]
+[![MongoDB][MongoDB]][MongoDB-url]
+[![JavaScript][JavaScript]][JavaScript-url]
+[![HTML5][HTML5]][HTML5-url]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -83,26 +88,30 @@ To get a local copy up and running follow these simple example steps.
 
 This is an example of how to list things you need to use the software and how to install them.
 
-- npm
-  ```sh
-  npm install npm@latest -g
-  ```
+```sh
+npm install npm@latest -g
+```
+
+_You can also use **pnpm** or **yarn**_
 
 ### Installation
 
-1. Get a free API Key at [https://example.com](https://example.com)
-2. Clone the repo
+1. Clone the repo
    ```sh
    git clone https://github.com/JesterDomingo/comp231-C446-Team-8-W24.git
    ```
-3. Install NPM packages
+1. Install NPM packages
    ```sh
    npm install
    ```
-4. Enter your API in `config.js`
-   ```js
-   const API_KEY = 'ENTER YOUR API';
+1. Define environmental variables in a `.env` file
+   ```sh
+   mv .env.template .env
    ```
+1. Run the project
+   ```sh
+    cd client && npm run dev
+    ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -154,13 +163,12 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<!-- CONTACT -->
+<!-- Contributors -->
 
-## Contact
+## Contributors
 
-David Pietrocola - [@D4v1D911](https://twitter.com/D4v1D911) - pietrocoladavid@gmail.com
+David Pietrocola - [@pietrocoladavid](https://www.linkedin.com/in/pietrocoladavid/) - pietrocoladavid@gmail.com
 
-Project Link: [https://github.com/DavDeDev/comp231-C446-Team-8-W24](https://github.com/DavDeDev/comp231-C446-Team-8-W24)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -192,3 +200,13 @@ Project Link: [https://github.com/DavDeDev/comp231-C446-Team-8-W24](https://gith
 
 [Next.js]: https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white
 [Next-url]: https://nextjs.org/
+[React.js]: https://img.shields.io/badge/react-61DAFB?style=for-the-badge&logo=react&logoColor=white
+[React-url]: https://reactjs.org/
+[Node.js]: https://img.shields.io/badge/node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white
+[Node-url]: https://nodejs.org/en/
+[MongoDB]: https://img.shields.io/badge/mongodb-47A248?style=for-the-badge&logo=mongodb&logoColor=white
+[MongoDB-url]: https://www.mongodb.com/
+[JavaScript]: https://img.shields.io/badge/javascript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black
+[JavaScript-url]: https://www.javascript.com/
+[HTML5]: https://img.shields.io/badge/html5-E34F26?style=for-the-badge&logo=html5&logoColor=white
+[HTML5-url]: https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5
