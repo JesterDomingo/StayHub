@@ -19,6 +19,7 @@
             grid-row-end: 3;
             border-radius: 16px 0 0 0;
             overflow: hidden;
+            outline: none;
         }
     
         &--2 {
@@ -45,5 +46,24 @@
             border-radius: 0 0 0 16px;
             overflow: hidden;
         }
+    }
+
+    &__modal-wrap {
+        position: absolute;
+        width: 1000px;
+        height: 700px;
+        top: calc(50% - 350px);
+        left: calc(50% - 500px);
+        background: #fff;
+        padding: 80px;
+    }
+
+    &__modal-close {
+        position: absolute;
+        top: 40px;
+        right: 40px;
+        background: none;
+        outline: none;
+        cursor: pointer;
     }
 }
