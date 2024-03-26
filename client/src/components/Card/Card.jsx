@@ -5,7 +5,13 @@ import { Link } from "react-router-dom/cjs/react-router-dom.min";
 
 export default function Card(props) {
     return (
-        <Link to="#" className="card">
+        <Link 
+            to={{
+                pathname: `/a/${props.id}`,
+                state: {listingDetails: props}
+            }}
+            className="card"
+        >
             <div className="card__img-wrap">
                 <img className="card__img" width="240" height="235" src="assets/images/test-img.webp"></img>
             </div>

@@ -21,7 +21,7 @@ const Menu = withRouter(({ history }) => (
     <div className='container'>
       <nav className='header__navigation'>
         <Link to="/" className="header__link-home">
-          <img className='header__logo' width="48" height="48" src={'assets/icons/logo.png'}></img>
+          <img className='header__logo' width="48" height="48" src={'/assets/icons/logo.png'}></img>
         </Link>
         <div className='header__center'>
 

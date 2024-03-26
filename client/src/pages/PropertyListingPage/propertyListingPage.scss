@@ -1,0 +1,36 @@
+.property {
+    &__heading {
+        margin-bottom: 32px;
+    }
+
+    &__images {
+        margin-bottom: 32px;
+    }
+
+    &__common-info {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__left-side {
+        width: 60%;
+        margin-right: 48px;
+    }
+
+    &__short-heading {
+        font-size: 22px;
+        margin-bottom: 4px;
+    }
+
+    &__short-subheading {
+        font-size: 16px;
+        color: #909090;
+        margin-bottom: 32px;
+    }
+
+    &__description {
+        font-size: 16px;
+        line-height: 24px;
+    }
+    
+}

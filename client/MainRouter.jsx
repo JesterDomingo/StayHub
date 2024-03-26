@@ -20,6 +20,7 @@ import Cart from './cart/Cart'
 import StripeConnect from './user/StripeConnect'
 import ShopOrders from './order/ShopOrders'
 import Order from './order/Order'
+import PropertyListingPage from './src/pages/PropertyListingPage/PropertyListingPage'
 
 const MainRouter = () => {
   return (
@@ -32,6 +33,8 @@ const MainRouter = () => {
         <Route path="/signin" component={Signin}/>
         <PrivateRoute path="/user/edit/:userId" component={EditProfile}/>
         <Route path="/user/:userId" component={Profile}/>
+
+        <Route path="/a/:orderId" component={PropertyListingPage}/>
 
         <Route path="/cart" component={Cart}/>
         <Route path="/product/:productId" component={Product}/>
