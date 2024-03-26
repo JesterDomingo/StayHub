@@ -1,0 +1,25 @@
+.header {
+    margin-bottom: 32px;
+
+    &__navigation {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__button {
+        text-decoration: none;
+        color: inherit;
+        padding: 8px 16px;
+        border-radius: 16px;
+        background: #F5F5F5;
+
+        &:hover {
+            background: #E8E8E8;
+        }
+
+        &:not(:last-child) {
+            margin-right: 8px;
+        }
+    }
+}
