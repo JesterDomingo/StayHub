@@ -21,7 +21,7 @@ const Menu = withRouter(({ history }) => (
     <div className='container'>
       <nav className='header__navigation'>
         <Link to="/" className="header__link-home">
-          <img className='header__logo' width="48" height="48" src={'assets/icons/logo.png'}></img>
+          <img className='header__logo' width="48" height="48" src={'/assets/icons/logo.png'}></img>
         </Link>
         <div className='header__center'>
 
@@ -40,10 +40,10 @@ const Menu = withRouter(({ history }) => (
           {
             auth.isAuthenticated() && (<span>
               {auth.isAuthenticated().user.seller && (<Link to="/seller/shops">My Posts</Link>)}
-              <Link to={"/user/" + auth.isAuthenticated().user._id}>
+              <Link className="header__button" to={"/user/" + auth.isAuthenticated().user._id}>
                 My Page
               </Link>
-              <button type="button" color="inherit" onClick={() => {
+              <button className="header__button" type="button" color="inherit" onClick={() => {
                 auth.clearJWT(() => history.push('/'))
               }}>Sign out</button>
             </span>)

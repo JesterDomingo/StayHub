@@ -1,4 +1,11 @@
 .card {
+    background: #F5F5F5;
+    border-radius: 16px;
+
+    &:hover {
+        background: #E8E8E8;
+    }
+
     &__heading-wrap {
         display: flex;
         justify-content: space-between;
@@ -18,7 +25,7 @@
     }
 
     &__img-wrap {
-        border-radius: 16px;
+        border-radius: 16px 16px 0 0;
         overflow: hidden;
         margin-bottom: 8px;
     }
@@ -39,5 +46,9 @@
         &--low-height {
             line-height: 20px;
         }
+    }
+
+    &__info-section {
+        padding: 0 8px 8px;
     }
 }
