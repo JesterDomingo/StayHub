@@ -1,8 +1,12 @@
 import React from 'react'
 import auth from './../auth/auth-helper'
 import { Link, withRouter } from 'react-router-dom'
+import DatePickerCustom from '../src/components/DatePicker/DatePickerCustom';
 
 import './menu.scss';
+import Accordion from '../src/components/Accordion/Accordion';
+import ListOfTheCities from '../src/components/ListOfCities/ListOfCities';
+import { useState } from 'react';
 
 const isActive = (history, path) => {
   if (history.location.pathname == path)
@@ -16,6 +20,11 @@ const isPartActive = (history, path) => {
   else
     return { color: '#ffffff' }
 }
+
+const handleAccordionClick = (e) => {
+  console.log(e.target);
+}
+
 const Menu = withRouter(({ history }) => (
   <header className='header'>
     <div className='container'>
@@ -24,7 +33,14 @@ const Menu = withRouter(({ history }) => (
           <img className='header__logo' width="48" height="48" src={'/assets/icons/logo.png'}></img>
         </Link>
         <div className='header__center'>
-
+          <Accordion
+            heading="Where are you going?"
+            content=
+            {<ListOfTheCities
+              onCityChosen={handleAccordionClick}
+            />}
+          />
+          <DatePickerCustom />
         </div>
         <div className='header__login'>
           {
