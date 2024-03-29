@@ -1,10 +1,15 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useState } from "react";
+
 
 import "./accordion.scss"
 
 export default function Accordion(props) {
     const [isOpen, setIsOpen] = useState(false);
+
+    useEffect(() => {
+        setIsOpen(false)
+    }, [props.isOpen]);
 
     function handleClick() {
         setIsOpen(!isOpen)

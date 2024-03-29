@@ -21,11 +21,17 @@ const isPartActive = (history, path) => {
     return { color: '#ffffff' }
 }
 
-const handleAccordionClick = (e) => {
-  console.log(e.target);
-}
 
-const Menu = withRouter(({ history }) => (
+const Menu = withRouter(({ history }) => {
+  const [isOpened, setIsOpened] = useState(false);
+  const [location, setLocation] = useState('Where are you going?');
+
+  const handleAccordionClick = (e) => {
+    setLocation(e.currentTarget.textContent)
+    setIsOpened(!isOpened);
+  }  
+
+  return (
   <header className='header'>
     <div className='container'>
       <nav className='header__navigation'>
@@ -34,7 +40,8 @@ const Menu = withRouter(({ history }) => (
         </Link>
         <div className='header__center'>
           <Accordion
-            heading="Where are you going?"
+            isOpen={isOpened}
+            heading={location}
             content=
             {<ListOfTheCities
               onCityChosen={handleAccordionClick}
@@ -118,6 +125,6 @@ const Menu = withRouter(({ history }) => (
   //     </span></div>
   //   </Toolbar>
   // </AppBar>
-))
+     )     })
 
 export default Menu
