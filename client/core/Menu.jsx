@@ -23,9 +23,14 @@ const Menu = withRouter(({ history }) => (
         <Link to="/" className="header__link-home">
           <img className='header__logo' width="48" height="48" src={'/assets/icons/logo.png'}></img>
         </Link>
-        <div className='header__center'>
 
+        <div className='header__center'>
+        <form className="d-flex" role="search">
+        <input className="form-control me-2 rounded-pill" type="search" placeholder="Search" aria-label="Search"/>
+        <button className="btn btn-outline-success " type="submit">Search</button>
+      </form>
         </div>
+        
         <div className='header__login'>
           {
             !auth.isAuthenticated() && (<span>
