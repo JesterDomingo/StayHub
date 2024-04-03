@@ -21,6 +21,7 @@ import StripeConnect from './user/StripeConnect'
 import ShopOrders from './order/ShopOrders'
 import Order from './order/Order'
 import PropertyListingPage from './src/pages/PropertyListingPage/PropertyListingPage'
+import CancelBooking from './src/components/CancelBooking'
 
 const MainRouter = () => {
   return (
@@ -52,6 +53,7 @@ const MainRouter = () => {
 
         <Route path="/seller/stripe/connect" component={StripeConnect}/>
       </Switch>
+      <CancelBooking/>
     </div>)
 }
 
