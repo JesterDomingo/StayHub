@@ -1,9 +1,15 @@
 .header {
     margin-bottom: 32px;
+    padding: 8px 0;
 
     &__navigation {
         display: flex;
         justify-content: space-between;
+        align-items: center;
+    }
+
+    &__center {
+        display: flex;
         align-items: center;
     }
 
