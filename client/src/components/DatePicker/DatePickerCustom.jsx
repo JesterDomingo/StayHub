@@ -5,11 +5,12 @@ import { useState } from 'react';
 import "react-datepicker/dist/react-datepicker.css";
 import "./DatePickerCustom.scss"
 
-export default function DatePickerCustom() {
+export default function DatePickerCustom(props) {
     const [startDate, setStartDate] = useState(new Date("2024/02/08"));
     const [endDate, setEndDate] = useState(new Date("2024/02/10"));
+    
     return (
-        <div className='date-picker'>
+        <div className={`date-picker ${props.modificator}`}>
             <span className='date-picker__text'>FROM: </span>
             <DatePicker
                 className='date-picker__input'

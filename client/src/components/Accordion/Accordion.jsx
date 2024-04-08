@@ -20,7 +20,7 @@ export default function Accordion(props) {
             <button 
                 onClick={handleClick} 
                 type="button" 
-                className="accordion__button"
+                className={props.rightBorder ? "accordion__button accordion__button--rb" : "accordion__button"}
             >
                 {props.heading}
             </button>
