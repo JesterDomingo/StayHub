@@ -20,6 +20,7 @@ import {Redirect, Link} from 'react-router-dom'
 import config from './../../config/config'
 import stripeButton from './../assets/images/stripeButton.png'
 import MyOrders from './../order/MyOrders'
+import { Add } from '@material-ui/icons'
 
 const useStyles = makeStyles(theme => ({
   root: theme.mixins.gutters({
@@ -97,6 +98,12 @@ export default function Profile({ match }) {
                <Link to={"/user/edit/" + user._id}>
                  <IconButton aria-label="Edit" color="primary">
                    <Edit/>
+                 </IconButton>
+               </Link>
+               <Link to={"/add"}>
+                 <IconButton aria-label="add" color="primary">
+                  Add a place
+                   <Add/>
                  </IconButton>
                </Link>
                <DeleteUser userId={user._id}/>

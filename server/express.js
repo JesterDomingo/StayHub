@@ -6,9 +6,6 @@ import cors from 'cors'
 import helmet from 'helmet'
 import userRoutes from './routes/user.routes.js'
 import authRoutes from './routes/auth.routes.js'
-import shopRoutes from './routes/shop.routes.js'
-import productRoutes from './routes/product.routes.js'
-import orderRoutes from './routes/order.routes.js'
 import placeRoutes from './routes/place.routes.js'
 import path from 'path';
 import { fileURLToPath } from 'url';
@@ -25,9 +22,6 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use('/', userRoutes)
 app.use('/', authRoutes)
-app.use('/', shopRoutes)
-app.use('/', productRoutes)
-app.use('/', orderRoutes)
 app.use('/', placeRoutes)
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
