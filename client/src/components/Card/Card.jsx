@@ -13,7 +13,7 @@ export default function Card(props) {
             className="card"
         >
             <div className="card__img-wrap">
-                <img className="card__img" width="240" height="235" src="assets/images/test-img.webp"></img>
+                <img className="card__img" width="240" height="235" src={props.mainPhoto}></img>
             </div>
             <section className="card__info-section">
                 <div className="card__heading-wrap">

@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'
+import React, { useState, useEffect } from 'react'
 import { makeStyles } from '@material-ui/core/styles'
 import Paper from '@material-ui/core/Paper'
 import List from '@material-ui/core/List'
@@ -7,8 +7,9 @@ import ListItemText from '@material-ui/core/ListItemText'
 import Typography from '@material-ui/core/Typography'
 import Divider from '@material-ui/core/Divider'
 import auth from './../auth/auth-helper'
-import {listByUser} from './api-order.js'
-import {Link} from 'react-router-dom'
+import axios from 'axios'
+import { listByUser } from './api-order.js'
+import { Link } from 'react-router-dom'
 
 const useStyles = makeStyles(theme => ({
   root: theme.mixins.gutters({
@@ -23,44 +24,56 @@ const useStyles = makeStyles(theme => ({
   }
 }))
 
-export default function MyOrders(){
+export default function MyOrders() {
   const classes = useStyles()
   const [orders, setOrders] = useState([])
+  const [places, setPlaces] = useState([])
+
   const jwt = auth.isAuthenticated()
 
   useEffect(() => {
     const abortController = new AbortController()
     const signal = abortController.signal
-    listByUser({
-      userId: jwt.user._id
-    }, {t: jwt.token}).then((data) => {
-      if (data.error) {
-        console.log(data.error)
-      } else {
-        setOrders(data)
+
+    axios.get("/api/getUserPlaces", {
+      params: {
+        id: jwt.user._id
       }
     })
-    return function cleanup(){
-      abortController.abort()
-    }
+      .then(response => {
+        const { data } = response;
+        setPlaces(data);
+      })
+      .catch(error => {
+        console.error("Error fetching places:", error);
+      });
   }, [])
 
-    return (
-      <Paper className={classes.root} elevation={4}>
-        <Typography type="title" className={classes.title}>
-          Your Orders
-        </Typography>
-        <List dense>
-          {orders.map((order, i) => {
-            return <span key={i}>
-                      <Link to={"/order/"+order._id}>
-                        <ListItem button>
-                          <ListItemText primary={<strong>{"Order # "+order._id}</strong>} secondary={(new Date(order.created)).toDateString()}/>
-                        </ListItem>
-                      </Link>
-                      <Divider/>
-                    </span>})}
-        </List>
-      </Paper>
-    )
+
+  return (
+    <Paper className={classes.root} elevation={4}>
+      <Typography type="title" className={classes.title}>
+        Your Places
+      </Typography>
+      <List dense>
+        {places.map((place, i) => {
+          return <span key={i}>
+            <Link
+              to={{
+                pathname: `/a/${place._id}`,
+              }}
+              className="card"
+            >
+              {/* <Link to={"/order/" + place._id}> */}
+                <ListItem button>
+                  <ListItemText primary={<strong>{"Place " + place.title}</strong>} secondary={`Located: ${place.address}`} />
+                </ListItem>
+              {/* </Link> */}
+            </Link>
+            <Divider />
+          </span>
+        })}
+      </List>
+    </Paper>
+  )
 }

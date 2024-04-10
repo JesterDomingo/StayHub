@@ -1,4 +1,5 @@
 import mongoose from 'mongoose'
+
 const CartItemSchema = new mongoose.Schema({
   product: {type: mongoose.Schema.ObjectId, ref: 'Product'},
   quantity: Number,

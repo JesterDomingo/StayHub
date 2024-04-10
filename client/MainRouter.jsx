@@ -35,7 +35,7 @@ const MainRouter = () => {
         <PrivateRoute path="/user/edit/:userId" component={EditProfile}/>
         <Route path="/user/:userId" component={Profile}/>
 
-        <Route path="/a/:orderId" component={PropertyListingPage}/>
+        <Route path="/a/:placeId" component={PropertyListingPage}/>
 
         <Route path="/add" component={AddPlacesForm}/>
         <Route path="/cart" component={Cart}/>
