@@ -3,7 +3,7 @@ import DatePicker from "react-datepicker";
 import { useState } from 'react';
 
 import "react-datepicker/dist/react-datepicker.css";
-import "./DatePickerCustom.scss"
+import "./datePickerCustom.scss"
 
 export default function DatePickerCustom(props) {
     const [startDate, setStartDate] = useState(new Date("2024/02/08"));
