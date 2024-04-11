@@ -19,6 +19,7 @@ const CURRENT_WORKING_DIR = process.cwd()
 
 app.use("/uploads", express.static(__dirname+"/uploads")); // For getting images that are downloaded by link
 app.use(express.json());
+app.use(express.static(path.join(CURRENT_WORKING_DIR, "dist/app")));
 app.use(express.urlencoded({ extended: true }));
 app.use('/', userRoutes)
 app.use('/', authRoutes)
