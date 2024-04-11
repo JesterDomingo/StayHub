@@ -36,6 +36,7 @@
     "react-slick": "^0.30.2",
     "react-stripe-elements": "6.1.1",
     "request": "2.88.2",
+    "scss": "^0.2.4",
     "slick-carousel": "^1.8.1",
     "stripe": "8.38.0"
   },
