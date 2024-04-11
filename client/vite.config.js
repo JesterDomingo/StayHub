@@ -24,12 +24,18 @@ export default defineConfig({
         target: `http://localhost:${PORT}`,
         changeOrigin: true,
       },
+      '/auth': {
+        target: `http://localhost:${PORT}`,
+        changeOrigin: true,
+      },
+     
     },
   },
   build: {
-    manifest: true,
-    rollupOptions: {
-      input: "./src/main.jsx",
-    },
+    outDir: '../dist/app',
+    // manifest: true,
+    // rollupOptions: {
+    //   input: "./src/main.jsx",
+    // },
   },
 });
