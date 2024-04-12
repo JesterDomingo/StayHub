@@ -9,12 +9,13 @@ import axios from "axios";
 import Perks from "../../components/Perks/Perks";
 
 
-const jwt = auth.isAuthenticated();
-const userData = JSON.parse(sessionStorage.getItem("jwt"));
-
 const AddPlacesForm = () => {
 
+    const jwt = auth.isAuthenticated();
+
     const { id } = useParams();
+
+    let userData = {};
 
     const initialState = {
         user: userData?.user,
@@ -38,6 +39,10 @@ const AddPlacesForm = () => {
             [stateName]: stateValue
         }));
     }
+
+    useEffect(() => {
+        userData = JSON.parse(sessionStorage.getItem("jwt"));
+    }, [state])
 
 
 
@@ -88,7 +93,7 @@ const AddPlacesForm = () => {
             <div>
                 <h2 className="text-2xl mt-4">{title}</h2>
                 <p className="text-gray-500 text-sm">{description}</p>
-                </div>
+            </div>
         );
     }
 
@@ -138,6 +143,7 @@ const AddPlacesForm = () => {
 
     const savePlace = async (event) => {
         event.preventDefault();
+
         const placeData = {
             user: userData.user,
             title: state.title,
@@ -196,7 +202,7 @@ const AddPlacesForm = () => {
                         );
                     })}
                     <label className="h-32 cursor-pointer flex gap-1 items-center justify-center border bg-transparent rounded-2xl p-8 text-2xl text-gray-600">
-                        <input type="file" multiple className="hidden" onChange={uploadPhoto}/>
+                        <input type="file" multiple className="hidden" onChange={uploadPhoto} />
                         <FontAwesomeIcon icon={faArrowUpFromBracket} />
                         Upload
                     </label>

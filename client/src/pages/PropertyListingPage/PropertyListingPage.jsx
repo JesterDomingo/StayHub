@@ -56,7 +56,7 @@ export default function PropertyListingPage() {
                     <p className="property__description">{place.description}</p>
                 </div>
                 <div className="property__right-side">
-                    here will be boocking block
+                    here will be booking block
                 </div>
             </section>
         </div>
