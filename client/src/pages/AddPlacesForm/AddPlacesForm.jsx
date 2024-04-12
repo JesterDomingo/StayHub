@@ -17,7 +17,7 @@ const AddPlacesForm = () => {
     const { id } = useParams();
 
     const initialState = {
-        user: userData.user,
+        user: userData?.user,
         title: "",
         address: "",
         photoLink: "",

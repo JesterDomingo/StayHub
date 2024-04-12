@@ -1,12 +1,7 @@
-// import express from 'express';
-// const express = require("express");
-// import imageDownloader from 'image-downloader';
-// const imageDownloader = require('image-downloader');
 import fs from 'fs';
 import express from 'express'
 import auth from '../../client/auth/auth-helper.js';
 import path from 'path';
-// import path from 'path';
 const app = express();
 
 import  Place  from '../models/place.model.js'

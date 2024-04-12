@@ -1,10 +1,3 @@
-/*import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
-
-// https://vitejs.dev/config/
-export default defineConfig({
-  plugins: [react()],
-})*/
 import dotenv from 'dotenv';
 dotenv.config();
 
@@ -24,18 +17,18 @@ export default defineConfig({
         target: `http://localhost:${PORT}`,
         changeOrigin: true,
       },
-      '/auth': {
-        target: `http://localhost:${PORT}`,
-        changeOrigin: true,
-      },
+      // '/auth': {
+      //   target: `http://localhost:${PORT}`,
+      //   changeOrigin: true,
+      // },
      
     },
   },
   build: {
     outDir: '../dist/app',
-    // manifest: true,
-    // rollupOptions: {
-    //   input: "./src/main.jsx",
-    // },
+    manifest: true,
+    rollupOptions: {
+      input: "./src/main.jsx",
+    },
   },
 });
