@@ -3,9 +3,9 @@
     min-width: 220px;
 
     &__button {
-        background: none;
+        background: white;
         padding: 8px;
-        border: 1px solid #E8E8E8;
+        border: 1px solid rgb(239, 217, 204);
         border-radius: 8px 0 0 8px;
         font-size: 18px;
         line-height: 24px;
@@ -22,6 +22,6 @@
         left: 0;
         height: 100%;
         width: 100%;
-        background: #fff;
+        background: white;
     }
 }

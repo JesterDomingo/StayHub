@@ -7,6 +7,7 @@ import { faStar as outlinedStar } from '@fortawesome/free-regular-svg-icons';
 import auth from "../../../auth/auth-helper";
 import axios from "axios";
 import Perks from "../../components/Perks/Perks";
+import './AddPlaceForm.scss'
 
 
 const AddPlacesForm = () => {
