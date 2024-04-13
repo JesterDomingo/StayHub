@@ -10,9 +10,9 @@ const imagePaths = {
   downtown: './downtown.png',
   amazingviews: './view.png',
   ski: './ski.png',
-  houseboats: './houseboats.png', // Added houseboats image path
-  tinyhomes: './cabin.png', // Corrected the image path for Tiny Homes
-  farms: './farms.png' // Added farms image path
+  houseboats: './houseboats.png', 
+  tinyhomes: './cabin.png', 
+  farms: './farms.png'
 };
 
 const IconButtons = () => {
@@ -55,7 +55,7 @@ const IconButtons = () => {
   };
 
   const handleFarmsClick = () => {
-    history.push('/a/10'); // Navigate to Farms page
+    history.push('/a/10'); 
   };
 
   const getImageElement = (imageName) => {
