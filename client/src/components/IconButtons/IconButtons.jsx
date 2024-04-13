@@ -19,43 +19,33 @@ const IconButtons = () => {
   const history = useHistory();
 
   const handleTreeHouseClick = () => {
-    history.push('/a/1');
   };
 
   const handleLakefrontClick = () => {
-    history.push('/a/2');
   };
 
   const handleCabinsClick = () => {
-    history.push('/a/3');
   };
 
   const handleCastlesClick = () => {
-    history.push('/a/4');
   };
 
   const handleDowntownClick = () => {
-    history.push('/a/5');
   };
 
   const handleAmazingViewsClick = () => {
-    history.push('/a/6');
   };
 
   const handleSkiClick = () => {
-    history.push('/a/7');
   };
 
   const handleHouseboatsClick = () => {
-    history.push('/a/8');
   };
 
   const handleTinyHomesClick = () => {
-    history.push('/a/9');
   };
 
   const handleFarmsClick = () => {
-    history.push('/a/10'); 
   };
 
   const getImageElement = (imageName) => {

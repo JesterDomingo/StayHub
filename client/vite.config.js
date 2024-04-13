@@ -17,18 +17,19 @@ export default defineConfig({
         target: `http://localhost:${PORT}`,
         changeOrigin: true,
       },
-      // '/auth': {
-      //   target: `http://localhost:${PORT}`,
-      //   changeOrigin: true,
-      // },
+      //comment auth for developing
+      '/auth': {
+        target: `http://localhost:${PORT}`,
+        changeOrigin: true,
+      },
      
     },
   },
   build: {
     outDir: '../dist/app',
-    manifest: true,
-    rollupOptions: {
-      input: "./src/main.jsx",
-    },
+    // manifest: true,
+    // rollupOptions: {
+    //   input: "./src/main.jsx",
+    // },
   },
 });

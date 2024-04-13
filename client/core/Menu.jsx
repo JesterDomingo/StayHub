@@ -8,6 +8,7 @@ import Accordion from '../src/components/Accordion/Accordion';
 import ListOfTheCities from '../src/components/ListOfCities/ListOfCities';
 import PeopleNb from '../src/components/PeopleNb/PeopleNb';
 import { useState } from 'react';
+import logo2 from "../assets/icons/logo2.png";
 
 const isActive = (history, path) => {
   if (history.location.pathname == path)
@@ -44,7 +45,7 @@ const Menu = withRouter(({ history }) => {
       <div className='container'>
         <nav className='header__navigation'>
           <Link to="/" className="header__link-home">
-            <img className='header__logo' width="200" height="48" src={'/assets/icons/logo2.png'}></img>
+            <img className='header__logo' width="200" height="48" src={logo2}></img>
           </Link>
           <div className='header__center'>
             <Accordion
