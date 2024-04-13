@@ -6,7 +6,7 @@ const imagePaths = {
   lakefront: './mountain.png',
   cabins: './cabin.png',
   castles: '/castle.png', 
-  beachfront: './relax.png',
+  downtown: './downtown.png',
   amazingviews: './view.png',
   // Add more image names and paths as needed
 };
@@ -50,8 +50,8 @@ const IconButtons = () => {
       </button>
       <button className="icon-button">
         <div className="icon-button-content">
-          {getImageElement('Beachfront')}
-          <div className="button-label">Beachfront</div>
+          {getImageElement('Downtown')}
+          <div className="button-label">Downtown</div>
         </div>
       </button>
       <button className="icon-button">
