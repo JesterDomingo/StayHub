@@ -8,8 +8,8 @@ import Typography from '@material-ui/core/Typography'
 import Divider from '@material-ui/core/Divider'
 import auth from './../auth/auth-helper'
 import axios from 'axios'
-import { listByUser } from './api-order.js'
 import { Link } from 'react-router-dom'
+import Card from '../src/components/Card/Card.jsx'
 
 const useStyles = makeStyles(theme => ({
   root: theme.mixins.gutters({
@@ -47,7 +47,29 @@ export default function MyOrders() {
       .catch(error => {
         console.error("Error fetching places:", error);
       });
+
+
   }, [])
+
+  const [bookings, setBookings] = useState([]);
+
+  useEffect(() => {
+
+    axios.get("/api/getBookings", {
+      params: {
+        id: jwt.user._id
+      }
+    })
+      .then(response => {
+        const { data } = response;
+        setBookings(data);
+      })
+      .catch(error => {
+        console.error("Error fetching bookings:", error);
+        setLoading(false);
+      });
+
+  }, []);
 
 
   return (
@@ -64,11 +86,39 @@ export default function MyOrders() {
               }}
               className="card"
             >
-              {/* <Link to={"/order/" + place._id}> */}
-                <ListItem button>
-                  <ListItemText primary={<strong>{"Place " + place.title}</strong>} secondary={`Located: ${place.address}`} />
-                </ListItem>
-              {/* </Link> */}
+
+              <ListItem button>
+                <ListItemText primary={<strong>{"Place " + place.title}</strong>} secondary={`Located: ${place.address}`} />
+              </ListItem>
+
+            </Link>
+            <Divider />
+          </span>
+        })}
+      </List>
+      <Typography type="title" className={classes.title}>
+        Your Bookings
+      </Typography>
+      <List dense>
+        {bookings.map((booking, i) => {
+          return <span key={i}>
+            <Link
+              to={{
+                pathname: `/a/${booking.place._id}`,
+              }}
+              className="card"
+            >
+              <Card
+                key={booking.place._id}
+                id={booking.place._id}
+                title={booking.place.title}
+                place={booking.place.address}
+                date={booking.place?.date ?? "April 2 - 12"}
+                price={booking.place.price}
+                rating={booking.place?.rating ?? 5}
+                mainPhoto={`../${booking.place.photos[0]}`}
+                photos={booking.place.photos}
+              />
             </Link>
             <Divider />
           </span>

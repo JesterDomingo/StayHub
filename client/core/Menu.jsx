@@ -6,6 +6,7 @@ import DatePickerCustom from '../src/components/DatePicker/DatePickerCustom';
 import './menu.scss';
 import Accordion from '../src/components/Accordion/Accordion';
 import ListOfTheCities from '../src/components/ListOfCities/ListOfCities';
+import PeopleNb from '../src/components/PeopleNb/PeopleNb';
 import { useState } from 'react';
 
 const isActive = (history, path) => {
@@ -25,9 +26,16 @@ const isPartActive = (history, path) => {
 const Menu = withRouter(({ history }) => {
   const [isOpened, setIsOpened] = useState(false);
   const [location, setLocation] = useState('Where are you going?');
+  const [people, setPeople] = useState('How many people?');
+
 
   const handleAccordionClick = (e) => {
     setLocation(e.currentTarget.textContent)
+    setIsOpened(!isOpened);
+  }
+
+  const handleAccordionClickSec = (e) => {
+    setPeople(e.currentTarget.textContent)
     setIsOpened(!isOpened);
   }
 
@@ -49,11 +57,12 @@ const Menu = withRouter(({ history }) => {
             />
             <DatePickerCustom modificator="date-picker--no-border"/>
             <Accordion
-              heading="How many people?"
+              isOpen={isOpened}
+              heading={people}
               rightBorder={true}
               content=
-              {<ListOfTheCities
-                onCityChosen={handleAccordionClick}
+              {<PeopleNb
+                onPeopleChosen={handleAccordionClickSec}
               />}
             />
           </div>

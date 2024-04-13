@@ -2,11 +2,13 @@ import React from "react";
 import { useState, useEffect } from "react";
 import axios from 'axios';
 import { useParams } from "react-router-dom/cjs/react-router-dom";
+import auth from "../../../auth/auth-helper";
 import { useLocation } from "react-router-dom";
 import SliderGallery from "../../components/SliderGallery/SliderGallery";
 
 import "./propertyListingPage.scss"
 import Gallery from "../../components/Gallery/Gallery";
+import PreBooking from "../../components/PreBooking/PreBooking";
 
 export default function PropertyListingPage() {
 
@@ -30,10 +32,6 @@ export default function PropertyListingPage() {
     useEffect(() => {
         getPlace();
     }, []);
-    
-    useEffect(() => {
-        console.log(place)
-    }, [place]);
 
     // const place = state?.listingDetails?.place ?? "We will change it when connect an API"
 
@@ -56,7 +54,11 @@ export default function PropertyListingPage() {
                     <p className="property__description">{place.description}</p>
                 </div>
                 <div className="property__right-side">
-                    here will be booking block
+                {auth.isAuthenticated() ? (
+                    <PreBooking
+                        place = {place}
+                    />
+                ) : null}
                 </div>
             </section>
         </div>

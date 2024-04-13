@@ -7,6 +7,8 @@ import helmet from 'helmet'
 import userRoutes from './routes/user.routes.js'
 import authRoutes from './routes/auth.routes.js'
 import placeRoutes from './routes/place.routes.js'
+import bookingRoutes from './routes/booking.routes.js'
+
 import path from 'path';
 import { fileURLToPath } from 'url';
 
@@ -24,6 +26,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use('/', userRoutes)
 app.use('/', authRoutes)
 app.use('/', placeRoutes)
+app.use('/', bookingRoutes)
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(cookieParser())

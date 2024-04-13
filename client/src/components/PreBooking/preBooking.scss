@@ -1,0 +1,34 @@
+.booking-block {
+    padding: 20px;
+    border: 1px solid #E8E8E8;
+    border-radius: 8px;
+
+    &__heading {
+        font-weight: 600;
+        font-size: 24px;
+        margin-bottom: 16px;
+    }
+
+    &__accordions {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        margin-bottom: 16px;
+    }
+
+    &__datepicker {
+        margin-bottom: 16px;
+    }
+
+    &__button {
+        padding: 8px 16px;
+        border-radius: 8px;
+        width: 100%;
+        background: #F5F5F5;
+
+        &:hover {
+            background: #E8E8E8;
+        }
+
+    }
+}

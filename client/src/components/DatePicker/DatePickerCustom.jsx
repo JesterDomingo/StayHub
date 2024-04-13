@@ -9,13 +9,25 @@ export default function DatePickerCustom(props) {
     const [startDate, setStartDate] = useState(new Date("2024/02/08"));
     const [endDate, setEndDate] = useState(new Date("2024/02/10"));
     
+    function passData(start = startDate, end = endDate) {
+        const data = {
+            startDate: startDate,
+            endDate: endDate
+        }
+        
+        return data;
+    }
+
     return (
         <div className={`date-picker ${props.modificator}`}>
             <span className='date-picker__text'>FROM: </span>
             <DatePicker
                 className='date-picker__input'
                 selected={startDate}
-                onChange={(date) => setStartDate(date)}
+                onChange={(date) => {
+                    setStartDate(date)
+                    props.onDatesChanged(passData(startDate, endDate))
+                }}
                 selectsStart
                 startDate={startDate}
                 endDate={endDate}
@@ -24,7 +36,11 @@ export default function DatePickerCustom(props) {
             <DatePicker
                 className='date-picker__input'
                 selected={endDate}
-                onChange={(date) => setEndDate(date)}
+                onChange={(date) => {
+                    setEndDate(date)
+                    props.onDatesChanged(passData(startDate, endDate))
+                }    
+                }
                 selectsEnd
                 startDate={startDate}
                 endDate={endDate}
