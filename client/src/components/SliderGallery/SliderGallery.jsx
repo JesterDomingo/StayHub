@@ -14,13 +14,12 @@ export default function SliderGallery (props) {
         slidesToScroll: 1,
       };
 
-      const array = [1, 2, 3, 4, 5, 6, 7]
       return (
         <Slider {...settings}>
-          {array.map(item => {
+          {props.photos?.map(item => {
             return (
             <div>
-                <img key={item} style={{margin: '0 auto'}} src="/assets/images/test-img.webp"></img>
+                <img key={item} style={{margin: '0 auto'}} src={`../${item}`}></img>
             </div>
             )
           })}

@@ -6,20 +6,27 @@ import cors from 'cors'
 import helmet from 'helmet'
 import userRoutes from './routes/user.routes.js'
 import authRoutes from './routes/auth.routes.js'
-import shopRoutes from './routes/shop.routes.js'
-import productRoutes from './routes/product.routes.js'
-import orderRoutes from './routes/order.routes.js'
+import placeRoutes from './routes/place.routes.js'
+import bookingRoutes from './routes/booking.routes.js'
+
+import path from 'path';
+import { fileURLToPath } from 'url';
+
+
+const __filename = fileURLToPath(import.meta.url); // get the resolved path to the file
+const __dirname = path.dirname(__filename); // get the name of the directory
 
 const app = express()
 const CURRENT_WORKING_DIR = process.cwd()
 
+app.use("/uploads", express.static(__dirname+"/uploads")); // For getting images that are downloaded by link
 app.use(express.json());
+app.use(express.static(path.join(CURRENT_WORKING_DIR, "dist/app")));
 app.use(express.urlencoded({ extended: true }));
 app.use('/', userRoutes)
 app.use('/', authRoutes)
-app.use('/', shopRoutes)
-app.use('/', productRoutes)
-app.use('/', orderRoutes)
+app.use('/', placeRoutes)
+app.use('/', bookingRoutes)
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(cookieParser())

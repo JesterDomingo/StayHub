@@ -1,6 +1,7 @@
 .header {
     margin-bottom: 32px;
     padding: 8px 0;
+    background-color: rgb(6, 65, 61);
 
     &__navigation {
         display: flex;
@@ -18,14 +19,23 @@
         color: inherit;
         padding: 8px 16px;
         border-radius: 16px;
-        background: #F5F5F5;
+        background: white;
+        transition-duration: .3s;
+        border: 1px solid rgb(239, 217, 204);
 
         &:hover {
-            background: #E8E8E8;
+            background: rgb(239, 217, 204);
+            transition-duration: 0.3s;
         }
 
         &:not(:last-child) {
             margin-right: 8px;
         }
     }
+    
+}
+
+.header__logo{
+    border: 2px solid rgb(239, 217, 204);
+    border-radius: 10px;
 }

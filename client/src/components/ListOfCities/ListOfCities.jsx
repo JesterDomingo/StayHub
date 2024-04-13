@@ -1,6 +1,6 @@
 import React from "react";
 
-import "./ListOfCities.scss"
+import "./listOfCities.scss"
 
 export default function ListOfTheCities(props) {
     const temporaryCitiesList = [

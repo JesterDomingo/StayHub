@@ -4,7 +4,6 @@ import mongoose from 'mongoose'
 mongoose.Promise = global.Promise
 mongoose.connect(config.mongoUri, {
   useNewUrlParser: true,
-  //useCreateIndex: true, 
   useUnifiedTopology: true
 })
 

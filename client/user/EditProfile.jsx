@@ -114,7 +114,7 @@ export default function EditProfile({ match }) {
         <TextField id="email" type="email" label="Email" className={classes.textField} value={values.email} onChange={handleChange('email')} margin="normal" /><br />
         <TextField id="password" type="password" label="Password" className={classes.textField} value={values.password} onChange={handleChange('password')} margin="normal" />
         <Typography variant="subtitle1" className={classes.subheading}>
-          Seller Account
+          Buisness Account
         </Typography>
         <FormControlLabel
           control={

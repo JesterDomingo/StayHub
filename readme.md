@@ -16,7 +16,7 @@
     <img src="images/logo.png" alt="Logo" width="80" height="80">
   </a>
 
-<h3 align="center">AirBnb Clone</h3>
+<h3 align="center">NewcomerStayHub</h3>
 
   <p align="center">
     Capsotoe project for COMP231
@@ -68,7 +68,6 @@
 
 ### Built With
 
-[![Next][Next.js]][Next-url]
 [![React][React.js]][React-url]
 [![Node.js][Node.js]][Node-url]
 [![MongoDB][MongoDB]][MongoDB-url]
@@ -100,17 +99,21 @@ _You can also use **pnpm** or **yarn**_
    ```sh
    git clone https://github.com/JesterDomingo/comp231-C446-Team-8-W24.git
    ```
-1. Install NPM packages
+1. Install dependencies
    ```sh
-   npm install
+   yarn install
    ```
-1. Define environmental variables in a `.env` file
+1. Go to client directory 
    ```sh
-   mv .env.template .env
+   cd client
    ```
-1. Run the project
+1. Install dependencies
    ```sh
-    cd client && npm run dev
+    yarn install
+    ```
+1. Start the project 
+   ```sh
+   yarn dev
     ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -198,8 +201,6 @@ David Pietrocola - [@pietrocoladavid](https://www.linkedin.com/in/pietrocoladavi
 
 <!-- !Use this as a template to add technologies -->
 
-[Next.js]: https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white
-[Next-url]: https://nextjs.org/
 [React.js]: https://img.shields.io/badge/react-61DAFB?style=for-the-badge&logo=react&logoColor=white
 [React-url]: https://reactjs.org/
 [Node.js]: https://img.shields.io/badge/node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white

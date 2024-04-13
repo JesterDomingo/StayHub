@@ -21,6 +21,7 @@ import StripeConnect from './user/StripeConnect'
 import ShopOrders from './order/ShopOrders'
 import Order from './order/Order'
 import PropertyListingPage from './src/pages/PropertyListingPage/PropertyListingPage'
+import AddPlacesForm from './src/pages/AddPlacesForm/AddPlacesForm'
 
 const MainRouter = () => {
   return (
@@ -34,8 +35,9 @@ const MainRouter = () => {
         <PrivateRoute path="/user/edit/:userId" component={EditProfile}/>
         <Route path="/user/:userId" component={Profile}/>
 
-        <Route path="/a/:orderId" component={PropertyListingPage}/>
+        <Route path="/a/:placeId" component={PropertyListingPage}/>
 
+        <Route path="/add" component={AddPlacesForm}/>
         <Route path="/cart" component={Cart}/>
         <Route path="/product/:productId" component={Product}/>
         <Route path="/shops/all" component={Shops}/>
